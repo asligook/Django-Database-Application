@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rate Session</title>
+<style>
+  /* Adjust button position */
+  button {
+      margin-top: 50px; /* Change as needed */
+  }
+</style>
+</head>
+<body>
+
+<h1>Rate Session</h1>
+<p>Enter today's date in the format dd-mm-yyyy</p>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label for="id_rate">Rate:</label>
+    <input type="float" name="rate" id="id_rate" required>
+  </div>
+  <div>
+    <label for="id_date">Date:</label>
+    <input type="text" name="date" id="id_date" placeholder="dd-mm-yyyy" required>
+  </div>
+  <div>
+    <label for="id_session_id">Session ID:</label>
+    <input type="number" name="session_id" id="id_session_id" required>
+  </div>
+  <button type="submit">Rate Session</button>
+</form>
+    <a href="{% url 'jury' %}"><button>Turn Back to Jury Dashboard</button></a>
+</body>
+</html>

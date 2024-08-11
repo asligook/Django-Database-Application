@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Form</title>
+    <style>
+        /* Adjust button position */
+        button {
+            margin-top: 50px; /* Change as needed */
+        }
+    </style>
+    <style>
+        .field-container {
+            margin-bottom: 10px;
+        }
+        .field-container label {
+            display: inline-block;
+            width: 100px; /* Adjust width as needed */
+        }
+        .field-container input {
+            width: 200px; /* Adjust width as needed */
+        }
+    </style>
+</head>
+<body>
+    <h2>Squad Form</h2>
+    <h3>Enter Player names with first letter uppercase and the rest is lowercase (for example: Hande) </h3>
+    <form method="post">
+        {% csrf_token %}
+        <div class="field-container">
+            <label for="id_session_id">Session ID:</label>
+            {{ form.session_id }}
+        </div>
+        <div class="field-container">
+            <label for="id_player1">Player 1:</label>
+            {{ form.player1 }}
+            <label for="id_position1">Position1:</label>
+            {{ form.position1 }}
+        </div>
+        <div class="field-container">
+            <label for="id_player2">Player 2:</label>
+            {{ form.player2 }}
+            <label for="id_position2">Position2:</label>
+            {{ form.position2 }}
+        </div>
+        <div class="field-container">
+            <label for="id_player3">Player 3:</label>
+            {{ form.player3 }}
+            <label for="id_position3">Position3:</label>
+            {{ form.position3 }}
+        </div>
+        <div class="field-container">
+            <label for="id_player4">Player 4:</label>
+            {{ form.player4 }}
+            <label for="id_position4">Position4:</label>
+            {{ form.position4 }}
+        </div>
+        <div class="field-container">
+            <label for="id_player5">Player 5:</label>
+            {{ form.player5 }}
+            <label for="id_position5">Position5:</label>
+            {{ form.position5 }}
+        </div>
+        <div class="field-container">
+            <label for="id_player6">Player 6:</label>
+            {{ form.player6 }}
+            <label for="id_position6">Position6:</label>
+            {{ form.position6 }}
+        </div>
+        <!-- Repeat similar divs for player3, player4, ... -->
+        <button type="submit">Submit</button>
+    </form>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    {% if success_message %}
+        <p style="color: green;">{{ success_message }}</p>
+    {% endif %}
+    <a href="{% url 'coach' %}"><button>Turn Back to Coach Dashboard</button></a>
+</body>
+</html>

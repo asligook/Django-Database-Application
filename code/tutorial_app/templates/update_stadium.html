@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Stadium Name</title>
+    <style>
+        /* Adjust button position */
+        button {
+            margin-top: 50px; /* Change as needed */
+        }
+    </style>
+</head>
+<body>
+    <h2>Update Stadium Name</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Stadium Name</button>
+    </form>
+    <a href="{% url 'dbmanager' %}"><button>Turn Back to Database Manager Dashboard</button></a>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stadiums</title>
+    <style>
+        /* Adjust button position */
+        button {
+            margin-top: 50px; /* Change as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Stadium Name</th>
+                <th>Stadium Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for row in query_result %}
+                {% for column in row %}
+                <td>{{ column }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'coach' %}"><button>Turn Back to Coach Dashboard</button></a>
+</body>
+</html>
+
+
+
+

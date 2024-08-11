@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Session</title>
+    <style>
+        /* Adjust button position */
+        button {
+            margin-top: 50px; /* Change as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Add New Session</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    {% if success_message %}
+        <p>{{ success_message }}</p>
+    {% endif %}
+    <a href="{% url 'coach' %}"><button>Turn Back to Coach Dashboard</button></a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <style>
+        /* Adjust button position */
+        button {
+            margin-right: 50px; /* Change as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    {% if success_message %}
+    <p>{{ success_message }}</p>
+    {% endif %}
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+    <a href="{% url 'add_player' %}"><button>Add Player</button></a>
+    <a href="{% url 'add_jury' %}"><button>Add Jury</button></a>
+    <a href="{% url 'add_coach' %}"><button>Add Coach</button></a>
+    <a href="{% url 'update_stadium' %}"><button>Update Stadium Name</button></a>
+    <a href="{% url 'login' %}"><button>Logout</button></a>
+    <!-- Add player-specific content here -->
+</body>
+</html>

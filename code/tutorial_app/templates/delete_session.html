@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Match Session </title>
+    <style>
+        /* Adjust button position */
+        button {
+            margin-top: 50px; /* Change as needed */
+        }
+    </style>
+</head>
+<body>
+    <h2>Delete Match Session</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Delete Match Session</button>
+    </form>
+    <a href="{% url 'coach' %}"><button>Turn Back to Coach Dashboard</button></a>
+</body>
+</html>
