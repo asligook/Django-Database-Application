@@ -1,4 +1,4 @@
-# Database-Management-System
+# Django-Database-Application
 Project Assignment for CMPE321 - Inroduction to Database Systems at Bogazici University.
 
 - This project is indeed a Django application to create a database managament system for Turkish National Volleybal League.
